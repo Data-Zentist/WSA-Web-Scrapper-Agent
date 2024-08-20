@@ -22,7 +22,7 @@ To get started with this web scraper:
 
 1. **Clone the repository** to your local machine.
     ```bash
-    git clone https://github.com/farookfazni/WSA-Web-Scrapper-Agent.git
+    git clone https://github.com/Data-Zentist/WSA-Web-Scrapper-Agent.git
     cd WSA-Web-Scrapper-Agent
     ```
 2. **Create a new Python virtual environment** to ensure a clean workspace.
