@@ -33,17 +33,11 @@ class Tools():
 
         os.chdir(scrapy_project_dir)
 
-        # Set the output file path
-        # output_path = os.path.join(scrapy_project_dir, 'output.json')
-
         result = subprocess.run(
             ['scrapy', 'crawl', 'c_spider', '-a', f'start_url={start_url}'],
             capture_output=True, text=True
         )
         os.chdir(src_project_dir)
-        # Read the output.json file and return its contents
-        # with open(output_path, 'r') as f:
-        #     return f.read()
     
         return result
     

@@ -3,8 +3,7 @@ from crewai import Crew
 from task import ScrapeWebsiteTask
 from agents import ScrapeWebsiteAgent
 import pandas as pd
-
-
+import json
 
 def main():
     load_dotenv()
@@ -39,10 +38,16 @@ def main():
         )
 
     result = crew.kickoff()
+    # output = scrape_website_task.output
 
-    pd.DataFrame(result).to_csv('output.csv')
+    if result:
+        print(result.raw)
+        # Convert JSON data to a DataFrame and save it as CSV
+        df = pd.DataFrame([result.raw])  # Wrap json_data in a list to convert to DataFrame
 
-    print(result)
+        df.to_csv('output.csv', index=False)
+    else:
+        print("No valid JSON data to save")
 
 
 if __name__ == "__main__":
