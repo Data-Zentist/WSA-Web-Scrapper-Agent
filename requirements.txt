@@ -1,0 +1,6 @@
+crewai
+crewai_tools
+langchain_groq
+lxml
+html5lib
+scrapy

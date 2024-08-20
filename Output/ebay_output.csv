@@ -1,0 +1,15 @@
+,0,1
+0,raw,"{
+    ""product_details"": {
+        ""title"": ""adidas Men's Ultraboost 22 Running Shoes"",
+        ""price"": ""£85.00"",
+        ""description"": ""Brand: adidas\nStyle: Ultraboost 22\nColour: Black/White\nMaterial: Synthetic\nCondition: New with box\nSize: 9 UK\nHeel Type: Flat\nFastening: Lace-Up\nUpper Material: Synthetic\nSole Material: Rubber\nBoxed: Yes"",
+        ""seller"": ""ebay.uk"",
+        ""location"": ""United Kingdom"",
+        ""shipping"": ""Free P&P""
+    }
+}"
+1,pydantic,
+2,json_dict,
+3,tasks_output,"[TaskOutput(description='Your objective is to scrape the necessary data from the provided website URL. The data you collect should be relevant to the purpose specified below and must be accurate and well-structured.\n\nSteps:\n\nNavigate to the URL: Use the provided URL to access the website.https://www.ebay.co.uk/itm/226284738062?_trkparms=amclksrc%3DITM%26aid%3D777008%26algo%3DPERSONAL.TOPIC%26ao%3D1%26asc%3D20230823115209%26meid%3D9d8dbdfc7b864e4d810378a32c0e9a4c%26pid%3D101800%26rk%3D1%26rkt%3D1%26itm%3D226284738062%26pmt%3D0%26noa%3D1%26pg%3D4375194%26algv%3DRecentlyViewedItemsV2SignedOut%26brand%3Dadidas&_trksid=p4375194.c101800.m5481&_trkparms=parentrq%3A5979a32f1910ac1d5b2df49cffffd82c%7Cpageci%3A3305a62d-5b89-11ef-891e-66b7abb6a4fe%7Ciid%3A1%7Cvlpname%3Avlp_homepage\nIdentify Key Data Elements: Determine the specific data that needs to be extracted based on the provided requirements. This could include text, images, tables, or any other content visible on the page.\nScrape the Data: Efficiently extract the identified data while ensuring no crucial information is missed. If the website requires interaction (e.g., clicking, scrolling), make sure to handle these appropriately.\n', summary='Your objective is to scrape the necessary data from the...', raw='{\n    ""product_details"": {\n        ""title"": ""adidas Men\'s Ultraboost 22 Running Shoes"",\n        ""price"": ""£85.00"",\n        ""description"": ""Brand: adidas\\nStyle: Ultraboost 22\\nColour: Black/White\\nMaterial: Synthetic\\nCondition: New with box\\nSize: 9 UK\\nHeel Type: Flat\\nFastening: Lace-Up\\nUpper Material: Synthetic\\nSole Material: Rubber\\nBoxed: Yes"",\n        ""seller"": ""ebay.uk"",\n        ""location"": ""United Kingdom"",\n        ""shipping"": ""Free P&P""\n    }\n}', pydantic=None, json_dict=None, agent='Scrape Website Agent', output_format=<OutputFormat.RAW: 'raw'>)]"
+4,token_usage,total_tokens=29316 prompt_tokens=26943 completion_tokens=2373 successful_requests=10
