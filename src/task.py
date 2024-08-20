@@ -1,5 +1,7 @@
 from textwrap import dedent
 from crewai import Task
+from crewai.task import TaskOutput
+from crewai.tasks.output_format import OutputFormat
 
 class ScrapeWebsiteTask():
     # def crawl_website_task(self, agent, URL):
@@ -24,9 +26,20 @@ class ScrapeWebsiteTask():
                 Identify Key Data Elements: Determine the specific data that needs to be extracted based on the provided requirements. This could include text, images, tables, or any other content visible on the page.
                 Scrape the Data: Efficiently extract the identified data while ensuring no crucial information is missed. If the website requires interaction (e.g., clicking, scrolling), make sure to handle these appropriately.
                 """),
-            expected_output=dedent(f"""\
-                Your final answer MUST be a structured data file containing the scraped data in [JSON/CSV/etc.] 
+            expected_output=dedent("""Your final answer MUST be a structured data file containing the scraped data in [JSON/CSV/etc.] 
                 format, ready for further processing or analysis.
+                Example Output:
+                {
+                    {
+                        "product-title": "Product Title",
+                        "product-price": "Product Price",
+                        "product-description": "Product Description",
+                        "product-rate": "Product Rate",
+                        "product-no-of-reviews": "Product No. of Reviews"
+                    },
+                    {{...}}
+                }
+                                   
                 """),
             agent=agent,
             async_execution=False,
