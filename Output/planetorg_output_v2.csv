@@ -1,0 +1,12 @@
+,0,1
+0,raw,"{
+    ""product"": {
+        ""name"": ""Nuzest Promixx 700ml Shaker 700ml"",
+        ""price"": ""£24.99"",
+        ""description"": ""Nuzest Promixx is a premium plant-based protein powder blend that combines the benefits of pea, rice and potato proteins to provide a complete amino acid profile. With 20g of protein per serving, Promixx is ideal for those looking for a high-quality, easy-to-digest protein powder to support their fitness goals.""
+    }
+}"
+1,pydantic,
+2,json_dict,
+3,tasks_output,"[TaskOutput(description='Your objective is to scrape the necessary data from the provided website URL. The data you collect should be relevant to the purpose specified below and must be accurate and well-structured.\n\nSteps:\n\nNavigate to the URL: Use the provided URL to access the website.https://www.planetorganic.com/products/nuzest-promixx-700ml-shaker-700ml\nIdentify Key Data Elements: Determine the specific data that needs to be extracted based on the provided requirements. This could include text, images, tables, or any other content visible on the page.\nScrape the Data: Efficiently extract the identified data while ensuring no crucial information is missed. If the website requires interaction (e.g., clicking, scrolling), make sure to handle these appropriately.\n', summary='Your objective is to scrape the necessary data from the...', raw='{\n    ""product"": {\n        ""name"": ""Nuzest Promixx 700ml Shaker 700ml"",\n        ""price"": ""£24.99"",\n        ""description"": ""Nuzest Promixx is a premium plant-based protein powder blend that combines the benefits of pea, rice and potato proteins to provide a complete amino acid profile. With 20g of protein per serving, Promixx is ideal for those looking for a high-quality, easy-to-digest protein powder to support their fitness goals.""\n    }\n}', pydantic=None, json_dict=None, agent='Scrape Website Agent', output_format=<OutputFormat.RAW: 'raw'>)]"
+4,token_usage,total_tokens=13335 prompt_tokens=12810 completion_tokens=525 successful_requests=9

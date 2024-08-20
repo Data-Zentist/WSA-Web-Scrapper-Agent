@@ -1,0 +1,10 @@
+,0,1
+0,raw,"{
+    ""product_name"": ""100% Organic Shea Butter"",
+    ""product_description"": ""This rich and luxurious 100% organic shea butter is perfect for dry skin, stretch marks, scars and as a moisturiser. It can also be used as a hair mask to nourish and condition your hair."",
+    ""product_details"": ""Product Code: 18510""
+}"
+1,pydantic,
+2,json_dict,
+3,tasks_output,"[TaskOutput(description='Your objective is to scrape the necessary data from the provided website URL. The data you collect should be relevant to the purpose specified below and must be accurate and well-structured.\n\nSteps:\n\nNavigate to the URL: Use the provided URL to access the website.https://www.stirlinghealthfoodstore.co.uk/products/18510/100-organic-shea-butter.htm\nIdentify Key Data Elements: Determine the specific data that needs to be extracted based on the provided requirements. This could include text, images, tables, or any other content visible on the page.\nScrape the Data: Efficiently extract the identified data while ensuring no crucial information is missed. If the website requires interaction (e.g., clicking, scrolling), make sure to handle these appropriately.\n', summary='Your objective is to scrape the necessary data from the...', raw='{\n    ""product_name"": ""100% Organic Shea Butter"",\n    ""product_description"": ""This rich and luxurious 100% organic shea butter is perfect for dry skin, stretch marks, scars and as a moisturiser. It can also be used as a hair mask to nourish and condition your hair."",\n    ""product_details"": ""Product Code: 18510""\n}', pydantic=None, json_dict=None, agent='Scrape Website Agent', output_format=<OutputFormat.RAW: 'raw'>)]"
+4,token_usage,total_tokens=8239 prompt_tokens=7825 completion_tokens=414 successful_requests=7
