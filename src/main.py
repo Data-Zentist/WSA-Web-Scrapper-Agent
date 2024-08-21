@@ -40,6 +40,7 @@ def main():
     result = crew.kickoff()
 
     if result.json_dict:
+
         df = pd.DataFrame(result.json_dict)  # Wrap json_data in a list to convert to DataFrame
 
         df.to_csv('output.csv', index=False)
