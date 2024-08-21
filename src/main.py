@@ -38,16 +38,9 @@ def main():
         )
 
     result = crew.kickoff()
-    # output = scrape_website_task.output
 
-    if result:
-        # Convert JSON data to a dictionary
-        output_dict  = json.loads(result.raw)
-        # Extract the value associated with the 'raw' key
-        # raw_data = output_dict['raw']
-        print(output_dict)
-        # Convert JSON data to a DataFrame and save it as CSV
-        df = pd.DataFrame([output_dict])  # Wrap json_data in a list to convert to DataFrame
+    if result.json_dict:
+        df = pd.DataFrame(result.json_dict)  # Wrap json_data in a list to convert to DataFrame
 
         df.to_csv('output.csv', index=False)
     else:

@@ -2,6 +2,21 @@ from textwrap import dedent
 from crewai import Task
 from crewai.task import TaskOutput
 from crewai.tasks.output_format import OutputFormat
+from crewai.project import output_json
+from pydantic import BaseModel
+from typing import List
+
+# Define a Pydantic model for each product item
+class ProductItemModel(BaseModel):
+    product_title: str
+    product_price: str
+    product_description: str
+    product_rate: str
+    product_no_of_reviews: str
+
+# Define the model for the output which is a list of products
+class ScrapedDataModel(BaseModel):
+    products: List[ProductItemModel]  # A list of product items
 
 class ScrapeWebsiteTask():
     # def crawl_website_task(self, agent, URL):
@@ -15,6 +30,7 @@ class ScrapeWebsiteTask():
     #         async_execution=False,
     #     )
     
+    @output_json
     def scrape_website_task(self, agent, URL):
         return Task(
             description=dedent(f"""\
@@ -43,5 +59,6 @@ class ScrapeWebsiteTask():
                 """),
             agent=agent,
             async_execution=False,
+            output_json=ScrapedDataModel
         )
         # Identify the Key pages: use the above base URL and identify the key pages that need to be scraped.(Example: https://www.example.com/category-name2/product-id1, https://www.example.com/category-name3/product-id12)
