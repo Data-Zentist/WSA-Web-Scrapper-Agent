@@ -12,20 +12,19 @@ class Tools():
     #     return ScrapeWebsiteTool(website_url)
     
     @tool("scrape_website_bs4")
-    def scrape_with_bs4_tool(website_url):
+    def scrape_with_bs4_tool(website_url,element:dict):
         """Scrapes the content of the specified website. using beautifulSoap4"""
-        result = scrape_with_bs4(website_url)
+        result = scrape_with_bs4(website_url,element)
         return result  
 
-
     @tool("scrape_website_selenium")
-    def selanium_scaraper_tool(website_url,css_element='.main-content'):
+    def selanium_scaraper_tool(website_url,element:dict):
         """Scrapes the content of the specified website. using selenium"""
         # return SeleniumScrapingTool(website_url,css_element)
-        return scrape_with_selenium(website_url)
+        return scrape_with_selenium(website_url,element)
 
     @tool("scrape_website_spider")
-    def run_scrapy_spider_tool(start_url):
+    def run_scrapy_spider_tool(start_url,element:dict):
         """Scrapes the content of the specified website. using spider"""
         # Run the scrapy spider using subprocess and capture the output
         scrapy_project_dir = 'F:\DataZentist\Task1\my_scraper'
@@ -34,7 +33,7 @@ class Tools():
         os.chdir(scrapy_project_dir)
 
         result = subprocess.run(
-            ['scrapy', 'crawl', 'c_spider', '-a', f'start_url={start_url}'],
+            ['scrapy', 'crawl', 'c_spider', '-a', f'start_url={start_url}','-a', f'elements={element}'],
             capture_output=True, text=True
         )
         os.chdir(src_project_dir)

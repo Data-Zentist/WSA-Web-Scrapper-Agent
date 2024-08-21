@@ -31,7 +31,7 @@ class ScrapeWebsiteTask():
     #     )
     
     @output_json
-    def scrape_website_task(self, agent, URL):
+    def scrape_website_task(self, agent, URL,elements):
         return Task(
             description=dedent(f"""\
                 Your objective is to scrape the necessary data from the provided website URL. The data you collect should be relevant to the purpose specified below and must be accurate and well-structured.
@@ -39,7 +39,7 @@ class ScrapeWebsiteTask():
                 Steps:
 
                 Navigate to the URL: Use the provided URL to access the website.{URL}
-                Identify Key Data Elements: Determine the specific data that needs to be extracted based on the provided requirements. This could include text, images, tables, or any other content visible on the page.
+                Identify Key Data Elements: Determine the specific data that needs to be extracted based on the provided requirements. This could include text, images, tables, or any other content visible on the page.{elements}
                 Scrape the Data: Efficiently extract the identified data while ensuring no crucial information is missed. If the website requires interaction (e.g., clicking, scrolling), make sure to handle these appropriately.
                 """),
             expected_output=dedent("""Your final answer MUST be a structured data file containing the scraped data in [JSON/CSV/etc.] 

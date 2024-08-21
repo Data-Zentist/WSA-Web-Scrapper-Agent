@@ -3,7 +3,17 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import json
 
-def scrape_with_bs4(start_url):
+def scrape_with_bs4(start_url,elements=None):
+
+    if elements is None:
+        elements = {
+            'product-title': 'div.main-title h1 span',
+            'product-price': 'div.new-price span',
+            'product-description': 'div.main div p',
+            'product-rate': 'div.heading span.small span',
+            'product-no-of-reviews': 'div.heading span.small span'
+        }
+
     results = []
 
     def parse_page(url):
@@ -26,11 +36,11 @@ def scrape_with_bs4(start_url):
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html5lib')
 
-        product_title = soup.select_one('div.main-title h1 span')
-        product_price = soup.select('div.new-price span')
-        product_description = soup.select('div.main div p')
-        product_rate = soup.select_one('div.heading span.small span')
-        product_no_of_reviews = soup.select('div.heading span.small span')
+        product_title = soup.select_one(elements['product-title'])
+        product_price = soup.select(elements['product-price'])
+        product_description = soup.select(elements['product-description'])
+        product_rate = soup.select_one(elements['product-rate'])
+        product_no_of_reviews = soup.select(elements['product-no-of-reviews'])
 
         results.append({
             'product-title': product_title.text if product_title else None,
