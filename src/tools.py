@@ -27,8 +27,8 @@ class Tools():
     def run_scrapy_spider_tool(start_url,element:dict):
         """Scrapes the content of the specified website. using spider"""
         # Run the scrapy spider using subprocess and capture the output
-        scrapy_project_dir = 'F:\DataZentist\Task1\my_scraper'
-        src_project_dir='F:\DataZentist\Task1'
+        scrapy_project_dir = 'my_scraper'
+        src_project_dir='../'
 
         os.chdir(scrapy_project_dir)
 

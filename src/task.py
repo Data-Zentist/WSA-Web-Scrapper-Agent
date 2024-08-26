@@ -41,6 +41,8 @@ class ScrapeWebsiteTask():
                 Navigate to the URL: Use the provided URL to access the website.{URL}
                 Identify Key Data Elements: Determine the specific data that needs to be extracted based on the provided requirements. This could include text, images, tables, or any other content visible on the page.{elements}
                 Scrape the Data: Efficiently extract the identified data while ensuring no crucial information is missed. If the website requires interaction (e.g., clicking, scrolling), make sure to handle these appropriately.
+
+                NOTE: You have to use the tools in given order. scrape_website_spider,scrape_website_selenium,scrape_website_bs4.
                 """),
             expected_output=dedent("""Your final answer MUST be a structured data file containing the scraped data in [JSON/CSV/etc.] 
                 format, ready for further processing or analysis.

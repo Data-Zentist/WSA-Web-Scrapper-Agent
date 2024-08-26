@@ -61,6 +61,11 @@ def main():
         df = pd.DataFrame(result.json_dict)  # Wrap json_data in a list to convert to DataFrame
 
         df.to_csv('output.csv', index=False)
+
+    elif result:
+        df = pd.DataFrame(result)  # Wrap json_data in a list to convert to DataFrame
+
+        df.to_csv('output.csv', index=False)
     else:
         print("No valid JSON data to save")
 
